@@ -29,8 +29,13 @@ def chatbot():
             print("Chatbot: Hi there! How can I help you today?")
             chat_history.append("Chatbot: Hi there! How can I help you today?")
         
-        elif user_input == "todays date" or user_input == "time":
-            now = datetime.datetime.now().strftime("%d%B%Y, %I:%M %p")
+        elif  "date" in user_input:
+            now = datetime.datetime.now().strftime("%d %B %Y, %I:%M %p")
+            print(f"Chatbot: {now}")
+            chat_history.append(f"Chatbot: {now}")
+        
+        elif  'time' in user_input:
+            now = datetime.datetime.now().strftime("%I:%M %p")
             print(f"Chatbot: {now}")
             chat_history.append(f"Chatbot: {now}")
         
